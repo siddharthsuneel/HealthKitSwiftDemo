@@ -22,6 +22,7 @@
 		2BE82D571E64607A003AE943 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE82D561E64607A003AE943 /* ExtensionDelegate.swift */; };
 		2BE82D591E64607A003AE943 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE82D581E64607A003AE943 /* NotificationController.swift */; };
 		2BE82D5B1E64607A003AE943 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BE82D5A1E64607A003AE943 /* Assets.xcassets */; };
+		2BF562C51E6584C800A29F10 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BF562C41E6584C800A29F10 /* HealthKit.framework */; };
 		58D32CC97F3F992D23F358A8 /* Pods_HealthKitDemo_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2795B6DD3C9526239AF4633E /* Pods_HealthKitDemo_WatchKit_App.framework */; };
 		ABD20A95390ACC4C954DA05A /* Pods_HealthKitDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75960BC894152AFF4C0AC11 /* Pods_HealthKitDemo.framework */; };
 		B5A4953DF91352645CAC3462 /* Pods_HealthKitDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA6C86A4A351DF893317D45 /* Pods_HealthKitDemoTests.framework */; };
@@ -112,6 +113,8 @@
 		2BE82D581E64607A003AE943 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		2BE82D5A1E64607A003AE943 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BE82D5C1E64607A003AE943 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BF562C31E6584C800A29F10 /* HealthKitDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HealthKitDemo.entitlements; sourceTree = "<group>"; };
+		2BF562C41E6584C800A29F10 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		2F2D382CF0D2D2F8F0C3677A /* Pods_HealthKitDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthKitDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30B13FEF67EFEF500A1042C8 /* Pods-HealthKitDemo WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthKitDemo WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HealthKitDemo WatchKit Extension/Pods-HealthKitDemo WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		38B5FFC7356AD448B7F26515 /* Pods-HealthKitDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthKitDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HealthKitDemoUITests/Pods-HealthKitDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABD20A95390ACC4C954DA05A /* Pods_HealthKitDemo.framework in Frameworks */,
+				2BF562C51E6584C800A29F10 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +178,7 @@
 		06B3501D58D777BBB2082CAE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2BF562C41E6584C800A29F10 /* HealthKit.framework */,
 				A75960BC894152AFF4C0AC11 /* Pods_HealthKitDemo.framework */,
 				2795B6DD3C9526239AF4633E /* Pods_HealthKitDemo_WatchKit_App.framework */,
 				26F082696FD54C08D104C315 /* Pods_HealthKitDemo_WatchKit_Extension.framework */,
@@ -212,6 +217,7 @@
 		2BE82D181E646079003AE943 /* HealthKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				2BF562C31E6584C800A29F10 /* HealthKitDemo.entitlements */,
 				2BE82D191E646079003AE943 /* AppDelegate.swift */,
 				2BE82D1B1E646079003AE943 /* ViewController.swift */,
 				2BE82D1D1E646079003AE943 /* Main.storyboard */,
@@ -407,7 +413,13 @@
 				TargetAttributes = {
 					2BE82D151E646077003AE943 = {
 						CreatedOnToolsVersion = 8.1;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = CWZ6J3XWTV;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					2BE82D291E64607A003AE943 = {
 						CreatedOnToolsVersion = 8.1;
@@ -965,11 +977,13 @@
 			baseConfigurationReference = CD1864DEA8F21A2B49533FA5 /* Pods-HealthKitDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_ENTITLEMENTS = HealthKitDemo/HealthKitDemo.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = CWZ6J3XWTV;
 				INFOPLIST_FILE = HealthKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.DMI.HealthKitDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DMI.HealthKitDemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -981,11 +995,13 @@
 			baseConfigurationReference = 8F251C5F459358F8B7B1886A /* Pods-HealthKitDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_ENTITLEMENTS = HealthKitDemo/HealthKitDemo.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = CWZ6J3XWTV;
 				INFOPLIST_FILE = HealthKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.DMI.HealthKitDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DMI.HealthKitDemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
