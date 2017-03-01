@@ -21,10 +21,8 @@
 		2BEFE0A61E66DCAC00619D89 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEFE0A51E66DCAC00619D89 /* ExtensionDelegate.swift */; };
 		2BEFE0A81E66DCAC00619D89 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEFE0A71E66DCAC00619D89 /* NotificationController.swift */; };
 		2BEFE0AA1E66DCAC00619D89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BEFE0A91E66DCAC00619D89 /* Assets.xcassets */; };
-		2BEFE0C31E66E2FD00619D89 /* Model in Resources */ = {isa = PBXBuildFile; fileRef = 2BEFE0BF1E66E2FD00619D89 /* Model */; };
-		2BEFE0C41E66E2FD00619D89 /* Utilities in Resources */ = {isa = PBXBuildFile; fileRef = 2BEFE0C01E66E2FD00619D89 /* Utilities */; };
-		2BEFE0C51E66E2FD00619D89 /* ViewControllers in Resources */ = {isa = PBXBuildFile; fileRef = 2BEFE0C11E66E2FD00619D89 /* ViewControllers */; };
-		2BEFE0C61E66E2FD00619D89 /* Views in Resources */ = {isa = PBXBuildFile; fileRef = 2BEFE0C21E66E2FD00619D89 /* Views */; };
+		2BEFE0CD1E66E58900619D89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEFE0CB1E66E58900619D89 /* ViewController.swift */; };
+		2BEFE0D61E66E8A500619D89 /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEFE0D51E66E8A500619D89 /* HealthManager.swift */; };
 		5F235FB7DCA94D6B7EFD1223 /* Pods_WatchKitDemoApp_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3091F4FE5DF9CFAE73BBAD /* Pods_WatchKitDemoApp_WatchKit_App.framework */; };
 		87D3CF9BC5C54170A7389E6B /* Pods_WatchKitDemoApp_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520949826054CE9464A718B5 /* Pods_WatchKitDemoApp_WatchKit_Extension.framework */; };
 		DC9A1F1668A56167BA8F989B /* Pods_WatchKitDemoAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2661CB8D1CE108B8E5ADBB1A /* Pods_WatchKitDemoAppTests.framework */; };
@@ -114,10 +112,9 @@
 		2BEFE0A71E66DCAC00619D89 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		2BEFE0A91E66DCAC00619D89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BEFE0AB1E66DCAC00619D89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2BEFE0BF1E66E2FD00619D89 /* Model */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Model; sourceTree = "<group>"; };
-		2BEFE0C01E66E2FD00619D89 /* Utilities */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Utilities; sourceTree = "<group>"; };
-		2BEFE0C11E66E2FD00619D89 /* ViewControllers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ViewControllers; sourceTree = "<group>"; };
-		2BEFE0C21E66E2FD00619D89 /* Views */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Views; sourceTree = "<group>"; };
+		2BEFE0CB1E66E58900619D89 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2BEFE0D21E66E61E00619D89 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		2BEFE0D51E66E8A500619D89 /* HealthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
 		2BFEFB983EFEE9351F2CB986 /* Pods-WatchKitDemoAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchKitDemoAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WatchKitDemoAppTests/Pods-WatchKitDemoAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		2F1E641681EB3EEA7395A221 /* Pods-WatchKitDemoApp WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchKitDemoApp WatchKit App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WatchKitDemoApp WatchKit App/Pods-WatchKitDemoApp WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
 		356470A9E39E0E6BEF57C9B7 /* Pods-WatchKitDemoAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchKitDemoAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WatchKitDemoAppTests/Pods-WatchKitDemoAppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -223,10 +220,10 @@
 		2BEFE0671E66DCAB00619D89 /* WatchKitDemoApp */ = {
 			isa = PBXGroup;
 			children = (
-				2BEFE0BF1E66E2FD00619D89 /* Model */,
-				2BEFE0C01E66E2FD00619D89 /* Utilities */,
-				2BEFE0C11E66E2FD00619D89 /* ViewControllers */,
-				2BEFE0C21E66E2FD00619D89 /* Views */,
+				2BEFE0C71E66E58900619D89 /* Model */,
+				2BEFE0C81E66E58900619D89 /* Utilities */,
+				2BEFE0CA1E66E58900619D89 /* ViewControllers */,
+				2BEFE0CC1E66E58900619D89 /* Views */,
 				2BEFE0681E66DCAB00619D89 /* AppDelegate.swift */,
 				2BEFE06C1E66DCAB00619D89 /* Main.storyboard */,
 				2BEFE06F1E66DCAB00619D89 /* Assets.xcassets */,
@@ -285,9 +282,48 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		2BEFE0C71E66E58900619D89 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2BEFE0C81E66E58900619D89 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				2BEFE0D41E66E8A500619D89 /* HealthManager */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		2BEFE0CA1E66E58900619D89 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2BEFE0CB1E66E58900619D89 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2BEFE0CC1E66E58900619D89 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2BEFE0D41E66E8A500619D89 /* HealthManager */ = {
+			isa = PBXGroup;
+			children = (
+				2BEFE0D51E66E8A500619D89 /* HealthManager.swift */,
+			);
+			path = HealthManager;
+			sourceTree = "<group>";
+		};
 		A41F57E016BCD5E360A20A8B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2BEFE0D21E66E61E00619D89 /* HealthKit.framework */,
 				636D1B72E9741C4FB9CDED9D /* Pods_WatchKitDemoApp.framework */,
 				BE3091F4FE5DF9CFAE73BBAD /* Pods_WatchKitDemoApp_WatchKit_App.framework */,
 				520949826054CE9464A718B5 /* Pods_WatchKitDemoApp_WatchKit_Extension.framework */,
@@ -470,11 +506,7 @@
 			files = (
 				2BEFE0731E66DCAB00619D89 /* LaunchScreen.storyboard in Resources */,
 				2BEFE0701E66DCAB00619D89 /* Assets.xcassets in Resources */,
-				2BEFE0C31E66E2FD00619D89 /* Model in Resources */,
-				2BEFE0C41E66E2FD00619D89 /* Utilities in Resources */,
 				2BEFE06E1E66DCAB00619D89 /* Main.storyboard in Resources */,
-				2BEFE0C51E66E2FD00619D89 /* ViewControllers in Resources */,
-				2BEFE0C61E66E2FD00619D89 /* Views in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -729,6 +761,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BEFE0CD1E66E58900619D89 /* ViewController.swift in Sources */,
+				2BEFE0D61E66E8A500619D89 /* HealthManager.swift in Sources */,
 				2BEFE0691E66DCAB00619D89 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
