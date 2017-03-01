@@ -1,0 +1,6 @@
+framework module Pods_WatchKitDemoApp_WatchKit_App {
+  umbrella header "Pods-WatchKitDemoApp WatchKit App-umbrella.h"
+
+  export *
+  module * { export * }
+}
