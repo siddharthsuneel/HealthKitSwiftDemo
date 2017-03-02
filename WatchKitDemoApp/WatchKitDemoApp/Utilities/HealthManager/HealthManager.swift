@@ -36,19 +36,84 @@ class HealthManager {
     
     func readDataTypes() -> Set<HKObjectType> {
         
-        let stepsCount: HKQuantityType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!
+        //Physical activity
+        let stepsCount: HKQuantityType              = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!
+        let distanceWalkRunning: HKQuantityType     = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)!
+        let distanceCycling: HKQuantityType         = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceCycling)!
         
-        let readSet:Set = [stepsCount]
+        //Calories
+        let basalEnergyBurned: HKQuantityType       = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.basalEnergyBurned)!
+        let activeEnergyBurned: HKQuantityType      = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned)!
+        let flightsClimbed: HKQuantityType          = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.flightsClimbed)!
+        
+        //Vitals
+        let heartRate: HKQuantityType               = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
+        let bodyTemperature: HKQuantityType         = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyTemperature)!
+        let respiratoryRate: HKQuantityType         = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.respiratoryRate)!
+        
+        //Nutritions
+        
+        let readSet:Set = [stepsCount, distanceWalkRunning, distanceCycling, basalEnergyBurned, activeEnergyBurned, flightsClimbed, heartRate, bodyTemperature, respiratoryRate]
         
         return readSet
     }
     
     func writeDataTypes() -> Set<HKSampleType> {
+    
+        let stepsCount: HKQuantityType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!
         
-        let height: HKQuantityType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.height)!
+        let height: HKQuantityType              = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.height)!
+        let weight: HKQuantityType              = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass)!
+        let biologicalSex:HKCharacteristicType  = HKCharacteristicType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.biologicalSex)!
+        let dateOfBirth:HKCharacteristicType    = HKCharacteristicType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.dateOfBirth)!
+        let bloodType:HKCharacteristicType      = HKCharacteristicType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.bloodType)!
+        let fatPercentage: HKQuantityType       = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyFatPercentage)!
+        let bmi: HKQuantityType                 = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMassIndex)!
         
-        let writeSet:Set = [height]
         
-        return writeSet
+        let writeSet:Set = [stepsCount, height, weight, biologicalSex, dateOfBirth, bloodType, fatPercentage, bmi]
+        
+        return writeSet as! Set<HKSampleType>
     }
+    
+    //MARK: Reading HealthKit Data
+    func getData() -> Int{
+        var bloodObject:HKBloodTypeObject?
+        do {
+            try bloodObject = healthStore.bloodType()
+        } catch {
+            
+        }
+        
+        let bloodType = bloodObject?.bloodType.rawValue ?? -1
+        return bloodType
+    }
+    
+    
+    //MARK: Writing HealthKit Data
+    
+    func saveStepsCountData() {
+        //Pick a random number between 0-500
+        let count = arc4random() % 500
+        
+        //Set the measuring unit
+        let countUnit:HKUnit = HKUnit.count()
+        
+        //Set the quantity to update/save
+        let steps:HKQuantity = HKQuantity.init(unit: countUnit, doubleValue: Double(count))
+        
+        //Select the quantity type using identifier to update
+        let stepsCount: HKQuantityType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!
+        let now = Date() //today's date
+        
+        //Create a sample to save
+        let stepCountSample: HKQuantitySample = HKQuantitySample.init(type: stepsCount, quantity: steps, start: now, end: now)
+        
+        healthStore.save(stepCountSample, withCompletion: { (success,error) -> Void in
+            if !success {
+                print("Failed to update the steps count in the health store")
+            }
+        })
+    }
+    
 }
