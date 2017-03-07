@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B34748C1E6948F0001EFEA3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B34748B1E6948F0001EFEA3 /* Constants.swift */; };
 		2BEFE0691E66DCAB00619D89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEFE0681E66DCAB00619D89 /* AppDelegate.swift */; };
 		2BEFE06E1E66DCAB00619D89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BEFE06C1E66DCAB00619D89 /* Main.storyboard */; };
 		2BEFE0701E66DCAB00619D89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BEFE06F1E66DCAB00619D89 /* Assets.xcassets */; };
@@ -89,6 +90,7 @@
 /* Begin PBXFileReference section */
 		21E2CE07E7F7953AD4684432 /* Pods-WatchKitDemoAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchKitDemoAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WatchKitDemoAppUITests/Pods-WatchKitDemoAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		2661CB8D1CE108B8E5ADBB1A /* Pods_WatchKitDemoAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WatchKitDemoAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B34748B1E6948F0001EFEA3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2BEFE0651E66DCAB00619D89 /* WatchKitDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchKitDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BEFE0681E66DCAB00619D89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BEFE06D1E66DCAB00619D89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -191,6 +193,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		2B34748A1E6948D3001EFEA3 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				2B34748B1E6948F0001EFEA3 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		2BEFE05C1E66DCAA00619D89 = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +230,7 @@
 		2BEFE0671E66DCAB00619D89 /* WatchKitDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				2B34748A1E6948D3001EFEA3 /* Constants */,
 				2BEFE0C71E66E58900619D89 /* Model */,
 				2BEFE0C81E66E58900619D89 /* Utilities */,
 				2BEFE0CA1E66E58900619D89 /* ViewControllers */,
@@ -764,6 +775,7 @@
 				2BEFE0CD1E66E58900619D89 /* ViewController.swift in Sources */,
 				2BEFE0D61E66E8A500619D89 /* HealthManager.swift in Sources */,
 				2BEFE0691E66DCAB00619D89 /* AppDelegate.swift in Sources */,
+				2B34748C1E6948F0001EFEA3 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
