@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
+    </dependencies>
+    <scenes>
+        <!--InterfaceController-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="InterfaceController" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WatchKitDemoApp_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label width="62" alignment="left" text="Activity" id="pdP-eY-KTe">
+                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <picker height="41" alignment="left" focusStyle="stack" indicatorMode="shownWhileFocused" id="Otm-Px-JI5">
+                            <connections>
+                                <action selector="didChangedActivityTypePickerValue:" destination="AgC-eL-Hgc" id="fit-Ma-NPI"/>
+                            </connections>
+                        </picker>
+                        <label width="74" alignment="left" text="Location" id="9sI-6p-NSG">
+                            <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <picker height="41" alignment="left" focusStyle="stack" indicatorMode="shownWhileFocused" id="hJy-hc-L4H">
+                            <connections>
+                                <action selector="didChangedLocationTypePickerValue:" destination="AgC-eL-Hgc" id="hdy-Dy-BhX"/>
+                            </connections>
+                        </picker>
+                        <button width="1" height="32" alignment="left" title="Start" id="nXM-va-1ey">
+                            <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="didTappedStartButton" destination="AgC-eL-Hgc" id="Obp-Fa-WMh"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="activityPicker" destination="Otm-Px-JI5" id="j4g-TT-oYk"/>
+                        <outlet property="locationPicker" destination="hJy-hc-L4H" id="klN-QO-dqB"/>
+                        <outlet property="startButton" destination="nXM-va-1ey" id="XLN-ux-WT5"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="32" y="328"/>
+        </scene>
+        <!--WorkoutInterfaceController-->
+        <scene sceneID="AgW-O8-qEX">
+            <objects>
+                <controller identifier="WorkoutInterfaceController" animationDuration="0.20000000000000001" id="wwC-Jg-OI9" customClass="WorkoutInterfaceController" customModule="WatchKitDemoApp_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Label" id="E0m-PZ-Uyu">
+                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <label alignment="left" text="Label" id="bvR-ZD-6Gs">
+                            <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <label alignment="left" text="Label" id="1QA-Vq-zXh">
+                            <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <label width="132" alignment="left" alpha="0.0" text="Marker Saved!" textAlignment="right" id="aaE-Wc-aip">
+                            <color key="textColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <group width="1" height="32" alignment="left" id="Uxv-Xb-UhT">
+                            <items>
+                                <button width="64" height="30" alignment="left" title="Pause" id="OnF-Hi-4Dr">
+                                    <color key="titleColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="didTappedPauseButton" destination="wwC-Jg-OI9" id="j9y-DZ-t7v"/>
+                                    </connections>
+                                </button>
+                                <button width="65" height="31" alignment="left" title="Marker" id="U3e-Tn-Ggi">
+                                    <color key="titleColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="didTappedMarkerButton" destination="wwC-Jg-OI9" id="eJj-hR-bqX"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <button width="1" height="33" alignment="left" title="Stop" id="cJT-SQ-FOY">
+                            <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="didTappedStopButton" destination="wwC-Jg-OI9" id="bJ3-3D-bc1"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="caloriesLabel" destination="bvR-ZD-6Gs" id="eYK-56-pwa"/>
+                        <outlet property="distanceLabel" destination="1QA-Vq-zXh" id="j9S-0h-XIC"/>
+                        <outlet property="durationLabel" destination="E0m-PZ-Uyu" id="uMA-4i-CW6"/>
+                        <outlet property="markerButton" destination="U3e-Tn-Ggi" id="kNi-7a-zRU"/>
+                        <outlet property="markerLabel" destination="aaE-Wc-aip" id="P48-rM-vvN"/>
+                        <outlet property="pauseResumeButton" destination="OnF-Hi-4Dr" id="mq3-xE-mnr"/>
+                        <outlet property="stopButton" destination="cJT-SQ-FOY" id="Vys-mQ-Eb1"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="267" y="325"/>
+        </scene>
+        <!--SummaryInterfaceController-->
+        <scene sceneID="eMC-WF-hKf">
+            <objects>
+                <controller identifier="SummaryInterfaceController" animationDuration="0.20000000000000001" id="y69-zd-Ejj" customClass="SummaryInterfaceController" customModule="WatchKitDemoApp_WatchKit_Extension">
+                    <items>
+                        <group width="136" height="50" alignment="left" id="zUN-OH-tAp">
+                            <items>
+                                <label width="79" alignment="left" text="Label" id="I2b-gy-S98">
+                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                                <activity width="53" height="48" alignment="left" id="5D1-R3-yKg"/>
+                            </items>
+                        </group>
+                        <label alignment="left" text="Label" id="BE4-jB-e4u">
+                            <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <label alignment="left" text="Label" id="xqE-1N-QSG">
+                            <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <label alignment="left" text="Label" id="rDc-Mu-Dyf">
+                            <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <button width="1" alignment="left" title="Done" id="ZD7-gk-kw0">
+                            <color key="titleColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="didTappedDoneButton" destination="y69-zd-Ejj" id="yeD-aB-cqt"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="activityRing" destination="5D1-R3-yKg" id="z9J-bk-EY3"/>
+                        <outlet property="caloriesLabel" destination="xqE-1N-QSG" id="2eH-LQ-1ru"/>
+                        <outlet property="distanceLabel" destination="rDc-Mu-Dyf" id="QHD-39-ACz"/>
+                        <outlet property="doneButton" destination="ZD7-gk-kw0" id="gjG-0b-bMp"/>
+                        <outlet property="durationLabel" destination="BE4-jB-e4u" id="Ttp-Go-jb5"/>
+                        <outlet property="workoutLabel" destination="I2b-gy-S98" id="RFi-lN-4v5"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="502" y="324.5"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="WatchKitDemoApp_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>

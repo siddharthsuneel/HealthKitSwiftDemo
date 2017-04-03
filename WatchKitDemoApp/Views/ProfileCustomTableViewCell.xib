@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileCustomTableViewCell" id="KGk-i7-Jjw" customClass="ProfileCustomTableViewCell" customModule="WatchKitDemoApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJh-pJ-koe">
+                        <rect key="frame" x="20" y="0.0" width="163" height="43.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ait-DC-HlZ">
+                        <rect key="frame" x="203" y="6" width="97" height="30.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="97" id="sHg-9N-5Cq"/>
+                        </constraints>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXB-8y-rDz">
+                        <rect key="frame" x="20" y="0.0" width="280" height="43.5"/>
+                        <state key="normal" title="Button"/>
+                        <connections>
+                            <action selector="didTappedActionButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="5Nd-qo-KMY"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="ait-DC-HlZ" secondAttribute="bottom" constant="7" id="6h8-DW-xjp"/>
+                    <constraint firstAttribute="bottom" secondItem="bXB-8y-rDz" secondAttribute="bottom" id="HDK-pt-D3W"/>
+                    <constraint firstItem="bXB-8y-rDz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="LQ0-fy-As7"/>
+                    <constraint firstAttribute="trailing" secondItem="ait-DC-HlZ" secondAttribute="trailing" constant="20" id="NOn-Vn-tA2"/>
+                    <constraint firstItem="ait-DC-HlZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="Vu5-Q3-CE7"/>
+                    <constraint firstAttribute="bottom" secondItem="cJh-pJ-koe" secondAttribute="bottom" id="W47-3S-3aa"/>
+                    <constraint firstItem="bXB-8y-rDz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="j08-ok-Kmn"/>
+                    <constraint firstItem="ait-DC-HlZ" firstAttribute="leading" secondItem="cJh-pJ-koe" secondAttribute="trailing" constant="20" id="pA4-AJ-2m4"/>
+                    <constraint firstItem="cJh-pJ-koe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="q7j-Da-ywx"/>
+                    <constraint firstItem="cJh-pJ-koe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="uBL-ml-hQk"/>
+                    <constraint firstAttribute="trailing" secondItem="bXB-8y-rDz" secondAttribute="trailing" constant="20" id="vlt-On-B49"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="actionButton" destination="bXB-8y-rDz" id="0Kl-3v-Cxv"/>
+                <outlet property="userLabel" destination="cJh-pJ-koe" id="2vr-OW-a1e"/>
+                <outlet property="userTextField" destination="ait-DC-HlZ" id="s1D-tA-kdo"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>
